@@ -1,0 +1,50 @@
+:root {
+  --primary-color: #FF4136;
+  --secondary-color: #7FDBFF;
+  --background-color: #000000;
+  --text-color: #FFFFFF;
+  --border-radius: 8px;
+  --neon-glow: 0 0 10px #FF4136, 0 0 20px #FF4136, 0 0 30px #FF4136;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+button {
+  border-radius: var(--border-radius);
+  border: 2px solid var(--primary-color);
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: transparent;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: background-color 0.25s, color 0.25s, box-shadow 0.25s;
+}
+
+button:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  box-shadow: var(--neon-glow);
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

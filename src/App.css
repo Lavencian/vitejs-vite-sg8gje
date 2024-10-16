@@ -1,0 +1,262 @@
+:root {
+  --primary-color: #FF4136;
+  --secondary-color: #7FDBFF;
+  --background-color: #000000;
+  --text-color: #FFFFFF;
+  --border-radius: 8px;
+  --neon-glow: 0 0 10px #FF4136, 0 0 20px #FF4136, 0 0 30px #FF4136;
+}
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.App {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(255, 65, 54, 0.3);
+}
+
+.App-header {
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 2.5em;
+  font-weight: bold;
+  color: var(--primary-color);
+  text-shadow: var(--neon-glow);
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(255, 65, 54, 0.2);
+}
+
+.stats p {
+  margin: 0;
+  font-weight: bold;
+  color: var(--secondary-color);
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+  color: var(--primary-color);
+}
+
+.tabs button.active {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  box-shadow: var(--neon-glow);
+}
+
+.game {
+  margin-top: 20px;
+}
+
+.soccer-field {
+  width: 300px;
+  height: 200px;
+  background-color: #1a4731;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(127, 219, 255, 0.3);
+}
+
+.ball {
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.player {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: white;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.player-antony { background-color: #FF5733; }
+.player-rashford { background-color: #33FF57; }
+.player-eriksen { background-color: #3357FF; }
+.player-messi { background-color: #FF33F1; }
+.player-ronaldo { background-color: #33FFF1; }
+.player-neymar { background-color: #F1FF33; }
+
+.score {
+  font-size: 3em;
+  font-weight: bold;
+  color: var(--primary-color);
+  margin: 10px 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  text-shadow: var(--neon-glow);
+}
+
+.score.animate {
+  opacity: 1;
+}
+
+.current-score {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--secondary-color);
+}
+
+.tap-button {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s, box-shadow 0.3s;
+  box-shadow: 0 0 20px rgba(255, 65, 54, 0.5);
+}
+
+.tap-button:hover {
+  background-color: #FF6E65;
+  transform: scale(1.05);
+  box-shadow: var(--neon-glow);
+}
+
+.tap-button:active {
+  transform: scale(0.95);
+}
+
+.tap-button:disabled {
+  background-color: #555555;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.shop, .boost, .social, .leaderboard {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 0 20px rgba(255, 65, 54, 0.2);
+}
+
+.shop-item, .boost-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+.shop-item:hover, .boost-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.shop-item button, .boost-item button {
+  min-width: 80px;
+}
+
+.social-link {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: var(--border-radius);
+  text-decoration: none;
+  color: var(--text-color);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.social-link:hover {
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  transform: translateY(-3px);
+}
+
+.social-logo {
+  margin-right: 10px;
+  font-size: 1.2em;
+}
+
+.submit-score {
+  margin-bottom: 20px;
+}
+
+.submit-score input {
+  padding: 10px;
+  margin-right: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid var(--primary-color);
+  border-radius: var(--border-radius);
+  color: var(--text-color);
+}
+
+.leaderboard ol {
+  list-style-position: inside;
+  padding-left: 0;
+}
+
+.leaderboard li {
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  transition: background-color 0.3s;
+}
+
+.leaderboard li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@keyframes neon-pulse {
+  0% {
+    text-shadow: var(--neon-glow);
+  }
+  50% {
+    text-shadow: 0 0 5px #FF4136, 0 0 10px #FF4136, 0 0 15px #FF4136;
+  }
+  100% {
+    text-shadow: var(--neon-glow);
+  }
+}
+
+.logo, .score {
+  animation: neon-pulse 2s infinite;
+}
